@@ -7,23 +7,21 @@
 
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Hugo 主题 MemE</title>
+        <title>📜 ZhcnPanda 的笔记薄</title>
         <link>https://ZhcnPanda.github.io/</link>
-        <description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description>
+        <description>ZhcnPanda的记事本子</description>
         <generator>Hugo 0.123.2 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
         
         
-            <managingEditor>reuixiy@gmail.com (reuixiy)</managingEditor>
+            <managingEditor>2623493447@qq.com (ZhcnPanda)</managingEditor>
         
         
-            <webMaster>reuixiy@gmail.com (reuixiy)</webMaster>
+            <webMaster>2623493447@qq.com (ZhcnPanda)</webMaster>
         
         
-            <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
-        
-        <lastBuildDate>Fri, 23 Feb 2024 20:12:30 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sat, 24 Feb 2024 00:13:46 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ZhcnPanda.github.io/rss.xml" />
         
@@ -34,9 +32,9 @@
                 <guid isPermaLink="true">https://ZhcnPanda.github.io/posts/hello-world/</guid>
                 <pubDate>Fri, 23 Feb 2024 19:49:52 &#43;0800</pubDate>
                 
-                    <author>reuixiy@gmail.com (reuixiy)</author>
+                    <author>2623493447@qq.com (ZhcnPanda)</author>
                 
-                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
                 
                     <description></description>
                 
