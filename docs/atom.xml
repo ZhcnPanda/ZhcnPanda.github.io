@@ -2,9 +2,9 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
-    <title type="text">📜 ZhcnPanda 的笔记薄</title>
+    <title type="text">ZhcnPanda 的笔记薄</title>
     <subtitle type="html">ZhcnPanda的记事本子</subtitle>
-    <updated>2024-02-24T00:13:46&#43;08:00</updated>
+    <updated>2024-02-24T16:51:06&#43;08:00</updated>
     <id>https://ZhcnPanda.github.io/</id>
     <link rel="alternate" type="text/html" href="https://ZhcnPanda.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://ZhcnPanda.github.io/atom.xml" />

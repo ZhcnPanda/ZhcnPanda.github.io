@@ -7,7 +7,7 @@
 
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>📜 ZhcnPanda 的笔记薄</title>
+        <title>ZhcnPanda 的笔记薄</title>
         <link>https://ZhcnPanda.github.io/</link>
         <description>ZhcnPanda的记事本子</description>
         <generator>Hugo 0.123.2 https://gohugo.io/</generator>
@@ -21,7 +21,7 @@
             <webMaster>2623493447@qq.com (ZhcnPanda)</webMaster>
         
         
-        <lastBuildDate>Sat, 24 Feb 2024 00:13:46 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sat, 24 Feb 2024 16:51:06 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://ZhcnPanda.github.io/rss.xml" />
         
