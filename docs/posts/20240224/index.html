@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.123.3"><meta name="theme-color" content="#fff" />
+    <meta name="color-scheme" content="light dark">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>搭建Hugo个人博客，并且使用“Github Page”托管静态网页 | ZhcnPanda 的笔记薄</title>
+
+    <link rel="stylesheet" href="/css/meme.min.a9acc7ee4e97feed2b9b623e03efab153e7858675bca53e3c97e7eb331b857f1.css"/>
+
+    
+    
+        
+            <script src="/js/meme.min.d264b0b3ef1381370f404a1668a5cdc17bd5836c16ac1b0d718affe4c8d09f41.js"></script>
+
+        
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Itim&amp;family=Noto&#43;Sans&#43;SC:wght@400;700&amp;family=Roboto&#43;Mono:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:wght@400;500;700&amp;family=Tilt&#43;Neon&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Itim&amp;family=Noto&#43;Sans&#43;SC:wght@400;700&amp;family=Roboto&#43;Mono:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:wght@400;500;700&amp;family=Tilt&#43;Neon&amp;display=swap" /></noscript>
+
+    <meta name="author" content="ZhcnPanda" /><meta name="description" content="· 前言 突然有一天晚上突发奇想，想做一个博客，记录一下踩坑日常，虽然之前也弄过，不过基……" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="ZhcnPanda 的笔记薄" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="ZhcnPanda 的笔记薄" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    
+    
+
+    
+        <link rel="canonical" href="https://ZhcnPanda.github.io/posts/20240224/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2024-02-24T17:55:46+08:00",
+        "dateModified": "2024-02-25T21:24:06+08:00",
+        "url": "https://ZhcnPanda.github.io/posts/20240224/",
+        "headline": "搭建Hugo个人博客，并且使用“Github Page”托管静态网页",
+        "description": "· 前言 突然有一天晚上突发奇想，想做一个博客，记录一下踩坑日常，虽然之前也弄过，不过基……",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  1859 ,
+        "image": "https://ZhcnPanda.github.io/icons/apple-touch-icon.png",
+        "author": {
+            "@type": "Person",
+            "description": "光荣在于平淡，艰巨在于漫长。",
+            "email": "2623493447@qq.com",
+            "image": "https://ZhcnPanda.github.io/icons/apple-touch-icon.png",
+            "url": "reik.top",
+            "name": "ZhcnPanda"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ZhcnPanda 的笔记薄",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ZhcnPanda.github.io/icons/apple-touch-icon.png"
+            },
+            "url": "https://ZhcnPanda.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://ZhcnPanda.github.io/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary" />
+
+<meta name="twitter:site" content="@zidan_qw" />
+<meta name="twitter:creator" content="@zidan_qw" />
+
+    
+
+
+
+<meta property="og:title" content="搭建Hugo个人博客，并且使用“Github Page”托管静态网页" />
+<meta property="og:description" content="· 前言 突然有一天晚上突发奇想，想做一个博客，记录一下踩坑日常，虽然之前也弄过，不过基……" />
+<meta property="og:url" content="https://ZhcnPanda.github.io/posts/20240224/" />
+<meta property="og:site_name" content="ZhcnPanda 的笔记薄" />
+<meta property="og:locale" content="zh-cn" /><meta property="og:image" content="https://ZhcnPanda.github.io/icons/apple-touch-icon.png" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2024-02-24T17:55:46&#43;08:00" />
+    <meta property="article:modified_time" content="2024-02-25T21:24:06&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+    
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="/" class="brand">ZhcnPanda 的笔记薄</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item active"><a href="/posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">文章</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="/about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
+                </li>
+            
+        
+            
+                
+                    
+                    
+                        <li class="menu-item">
+                            <a id="theme-switcher" href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-light"><path d="M193.2 104.5l48.8-97.5a18 18 0 0128 0l48.8 97.5 103.4 -34.5a18 18 0 0119.8 19.8l-34.5 103.4l97.5 48.8a18 18 0 010 28l-97.5 48.8 34.5 103.4a18 18 0 01-19.8 19.8l-103.4-34.5-48.8 97.5a18 18 0 01-28 0l-48.8-97.5l-103.4 34.5a18 18 0 01-19.8-19.8l34.5-103.4-97.5-48.8a18 18 0 010-28l97.5-48.8-34.5-103.4a18 18 0 0119.8-19.8zM256 128a128 128 0 10.01 0M256 160a96 96 0 10.01 0"/></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon theme-icon-dark"><path d="M27 412a256 256 0 10154-407a11.5 11.5 0 00-5 20a201.5 201.5 0 01-134 374a11.5 11.5 0 00-15 13"/></svg></a>
+                        </li>
+                    
+                
+            
+        
+            
+                
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="posts">
+
+            <h1 class="post-title p-name">搭建Hugo个人博客，并且使用“Github Page”托管静态网页</h1>
+
+            
+
+            
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+        
+        <time datetime="2024-02-24T17:55:46&#43;08:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2024.2.24</time>
+    
+    
+        
+        <time datetime="2024-02-25T21:24:06&#43;08:00" class="post-meta-item modified dt-updated"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M400 64h-48V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H160V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v52H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm-6 400H54a6 6 0 0 1-6-6V160h352v298a6 6 0 0 1-6 6zm-52.849-200.65L198.842 404.519c-4.705 4.667-12.303 4.637-16.971-.068l-75.091-75.699c-4.667-4.705-4.637-12.303.068-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l44.104 44.461 111.072-110.181c4.705-4.667 12.303-4.637 16.971.068l22.536 22.718c4.667 4.705 4.636 12.303-.069 16.97z"/></svg>&nbsp;2024.2.25</time>
+    
+    
+    
+        
+        
+        
+            
+        
+    
+    
+        
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;1859</span>
+    
+    
+        
+        <span class="post-meta-item reading-time"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;4&nbsp;分钟</span>
+    
+    
+    
+</div>
+
+            
+
+            <nav class="contents">
+  <h2 id="contents" class="contents-title">目录</h2><ol class="toc">
+    <li><a id="contents:-前言" href="#-前言">· 前言</a></li>
+    <li><a id="contents:-在本地部署hugo" href="#-在本地部署hugo">· 在本地部署Hugo</a></li>
+    <li><a id="contents:-创建并启动hugo网站" href="#-创建并启动hugo网站">· 创建并启动Hugo网站</a></li>
+    <li><a id="contents:-发布第一篇文章" href="#-发布第一篇文章">· 发布第一篇文章</a></li>
+    <li><a id="contents:-站点的完善与个性化" href="#-站点的完善与个性化">· 站点的完善与个性化</a></li>
+  </ol>
+</nav><div class="post-body e-content">
+                <hr>
+<h2 id="-前言"><a href="#-前言" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:-前言" class="headings">· 前言</a></h2>
+<p>  突然有一天晚上突发奇想，想做一个博客，记录一下踩坑日常，虽然之前也弄过，不过基本上都是半途而废。考虑到经济实惠和稳定性，选择<a href="https://docs.github.com/zh/pages/getting-started-with-github-pages/about-github-pages#%E5%85%B3%E4%BA%8E-github-pages" target="_blank" rel="noopener"><strong>Github Page</strong></a>托管，虽然有的时候抽风，不过问题不大。至于博客系统选择的话，找了很久，发现Hugo最适合我了，主要是简洁，够用，因为是托管在Github Page上面，由于是国外网站，花里胡哨的功能加了太多，访问速度也会下降很多。<br>
+  文章Hugo部署部分使用Windows平台示例，其他平台可参考<a href="https://gohugo.io/getting-started/quick-start/" target="_blank" rel="noopener"><strong>Hugo官方文档</strong></a>。</p>
+<h2 id="-在本地部署hugo"><a href="#-在本地部署hugo" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:-在本地部署hugo" class="headings">· 在本地部署Hugo</a></h2>
+<blockquote>
+<ul>
+<li>
+<p>Hugo官方提供了三种安装方式</p>
+<ul>
+<li>直接下载编译好的二进制程序</li>
+<li>使用包管理器安装，例如<a href="https://chocolatey.org/" target="_blank" rel="noopener">Chocolatey</a>，<a href="https://scoop.sh/" target="_blank" rel="noopener">Scoop</a>，<a href="https://learn.microsoft.com/en-us/windows/package-manager/" target="_blank" rel="noopener">Winget</a></li>
+<li>自己从源代码构建<br></li>
+</ul>
+</li>
+<li>
+<p>最简单方便的方法就是第一个，下载运行，一气呵成，文章使用第一种方法，其他安装方式见 [前言] 部分的Hugo官方文档。</p>
+</li>
+</ul>
+</blockquote>
+<ol>
+<li>
+<p>前往Hugo的<a href="https://github.com/gohugoio/hugo/releases/latest" target="_blank" rel="noopener"><strong>Github Release</strong></a>，根据你的设备架构选择对应的程序下载，获取Hugo最新版本。我这边选择 <code>hugo_extended_0.123.3_windows-amd64.zip</code></p>
+<ul>
+<li>因为兼容性的问题，在Windows平台上，大部分Hugo的第三方主题都需要使用扩展版本，所以这里我们下载带有 “<strong><code>extended</code></strong>” 标识的版本）。</li>
+</ul>
+</li>
+<li>
+<p>解压缩包后文件结构如下:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>- hugo_extended_0.123.3_windows-amd64
+    │
+    ├─── hugo.exe
+    │
+    ├─── LICENSE
+    │
+    └─── README.md
+</code></pre><ol start="3">
+<li>将此目录添加到 PATH 环境变量:<br>
+<code>Windows设置 &gt; 系统 &gt; 关于 &gt; 高级系统设置 &gt; 环境变量 &gt; 选择'Path' &gt; 编辑 &gt; 浏览 &gt; 选择此目录 &gt; 保存</code><br>
+<br>
+打开<code>Windows PowerShell</code>,输入以下命令检查Hugo是否部署完毕：</li>
+</ol>
+<blockquote>
+<ul>
+<li>Hugo官方要求使用<code>PoweShell</code>而不是<code>Windows PowerShell</code>,但是经过这几天我的使用，并没有发现<code>Windows PowerShell</code>存在Bug，如果后续在使用的时候遇到奇怪的报错，尝试使用<code>PowerShell</code>，<a href="https://gohugo.io/getting-started/quick-start/#commands" target="_blank" rel="noopener">详请点我。</a></li>
+</ul>
+</blockquote>
+<pre tabindex="0"><code>&gt;  hugo version  
+</code></pre><p>  输出版本详细信息即为部署成功。</p>
+<h2 id="-创建并启动hugo网站"><a href="#-创建并启动hugo网站" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:-创建并启动hugo网站" class="headings">· 创建并启动Hugo网站</a></h2>
+<ol>
+<li>进入工作目录，输入以下命令创建一个 <strong>Hugo</strong> 站点:</li>
+</ol>
+<pre tabindex="0"><code>&gt;  hugo new site &lt;网站名称&gt;                    
+</code></pre><ol start="2">
+<li><strong>Hugo</strong> 必须一同安装主题，这里用我使用的主题<a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener"><strong>MemE</strong></a>,按照MemE官方文档指引，推荐使用<a href="https://git-scm.com/" target="_blank" rel="noopener"><strong>Git</strong></a>拉取源码的方式安装主题，这样有利于后续MemE主题的更新,进入到刚刚创建好的站点根目录下，输入以下命令拉取主题源码:</li>
+</ol>
+<pre tabindex="0"><code>&gt;  git init
+&gt;  git submodule add --depth 1 https://github.com/reuixiy/hugo-theme-meme.git themes/meme
+</code></pre><ol start="3">
+<li>替换 <strong>Hugo</strong> 默认配置: 在站点根目录下，将 <strong>Hugo</strong> 默认生成的 <code>hugo.toml</code> 删除，再进入 <code>themes/meme/config-examples/zh-cn/ </code>目录，将 <code>MemE</code> 提供的 <code>config.toml</code> 复制到站点根目录下。</li>
+<li>使用以下命令，尝试启动 <strong>Hugo</strong> 服务端:</li>
+</ol>
+<pre tabindex="0"><code>&gt;  hugo server -D
+</code></pre><ol start="5">
+<li>浏览器尝试访问: <a href="http://localhost:1313/" target="_blank" rel="noopener"><strong>localhost:1313</strong></a>,如果出现首页，说明站点创建成功。(如果无法访问，请先检查是不是默认的1313端口被占用，导致Hugo使用了其他端口，具体查看命令行输出。)</li>
+</ol>
+<h2 id="-发布第一篇文章"><a href="#-发布第一篇文章" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:-发布第一篇文章" class="headings">· 发布第一篇文章</a></h2>
+<ol>
+<li>打开站点根目录，可以发现 <strong>content</strong> 文件夹，这个文件夹就是文章存放目录，包括自定义的<a href="https://markdown.com.cn/" target="_blank" rel="noopener">Markdown格式</a>展示页面（如：首页，关于等等），由于 <strong>Hugo</strong> 只识别带有 <a href="https://github.com/reuixiy/hugo-theme-meme#supported-front-matter" target="_blank" rel="noopener"><strong>Front Matter</strong></a> 的 <strong>Markdown格式</strong> 文章，使用命令可以直接生成带有此标识的文件，所以推荐使用命令行创建空文章。</li>
+<li>发布文章请先关闭 <strong>Hugo</strong> 服务端: 在命令行界面，直接按下 <strong><code>Ctrl + C</code></strong> 组合键。</li>
+<li>回到站点根目录，输入以下命令创建一个自带 <strong>Front Matter</strong> 的<strong>Markdown格式</strong> 文章:</li>
+</ol>
+<pre tabindex="0"><code>&gt;  hugo new &#34;posts/hello-world.md&#34;
+</code></pre><ol start="4">
+<li>此时站点根目录 <strong>contents</strong> 目录下出现了posts文件夹，里面就是刚刚创建的 <strong>hello-world.md</strong> 文章。</li>
+</ol>
+<h2 id="-站点的完善与个性化"><a href="#-站点的完善与个性化" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:-站点的完善与个性化" class="headings">· 站点的完善与个性化</a></h2>
+<blockquote>
+<ul>
+<li>本文章只涉及了最基本的个性化内容，高级玩法移步 <strong><a href="https://io-oi.me/tech/documentation-of-hugo-theme-meme/" target="_blank" rel="noopener">MemE主题官方文档</a></strong>。</li>
+<li><strong>MemE</strong> 的大部分站点配置都在根目录的 <code>config.toml</code> 中，并且该文件中贴心的使用的相当多的中文注释，小白稍微研究一下就能看得懂。</li>
+<li>对比站点目录和 <strong>MemE</strong> 主题的目录，细心的网友就发现了：站点根目录下的文件夹和 <strong>MemE</strong> 主题的目录文件夹基本重合，只不过站点根目录的文件夹大部分是空的。这是因为 <strong>Hugo</strong> 站点配置文件与个性化资源文件会先从站点根目录下拿取，如果文件不存在，<strong>Hugo</strong> 就会从 <strong>MemE</strong> 主题内拿取，因此，如果我们想更改某个资源文件，请务必先把主题内的资源文件复制到 <strong>Hugo</strong> 站点根目录下对应的文件夹，在进行修改，否则将会严重的影响MemE主题的后续更新（Git同步冲突）。</li>
+</ul>
+</blockquote>
+<ol>
+<li>修改站点图标。（该操作在站点配置文件中 <strong>“网页应用”</strong> 部分也有说明）
+<ol>
+<li>将 <strong>MemE</strong> 主题目录下的 <code>static</code> 文件夹复制到站点根目录下，覆盖站点的 <code>static</code> 文件夹。</li>
+<li>前往 <strong><a href="https://realfavicongenerator.net/" target="_blank" rel="noopener">https://realfavicongenerator.net/</a></strong> 生成相关图标和文件，下载后解压，仅保留 <code>android-chrome-512x512.png</code>、<code>apple-touch-icon.png</code>、<code>mstile-150x150.png</code>、<code>safari-pinned-tab.svg</code>、<code>favicon.ico</code>、<code>site.webmanifest</code> 这6个文件，删除其余文件。</li>
+<li>对照站点根目录下 <code>static</code> 文件夹中对应的文件，进行替换即可。</li>
+</ol>
+</li>
+</ol>
+
+            </div>
+
+            
+    
+    
+        <ul class="post-copyright">
+            <li class="copyright-item author"><span class="copyright-item-text">作者</span>：<a href="reik.top" class="p-author h-card" target="_blank" rel="noopener">ZhcnPanda</a></li>
+            
+                
+                
+                
+                
+                <li class="copyright-item link"><span class="copyright-item-text">链接</span>：<a href="/posts/20240224/" target="_blank" rel="noopener">https://ZhcnPanda.github.io/posts/20240224/</a></li>
+            
+            
+        </ul>
+    
+
+
+
+        </article>
+
+        
+
+        
+
+
+        
+
+
+        <div class="post-share">
+
+        
+
+        <div class="share-items">
+
+            
+            
+                
+                    <div class="share-item telegram">
+                        
+                        <a href="https://t.me/share/url?url=https://ZhcnPanda.github.io/posts/20240224/&amp;text=%e6%90%ad%e5%bb%baHugo%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2%ef%bc%8c%e5%b9%b6%e4%b8%94%e4%bd%bf%e7%94%a8%e2%80%9cGithub%20Page%e2%80%9d%e6%89%98%e7%ae%a1%e9%9d%99%e6%80%81%e7%bd%91%e9%a1%b5" title="分享到「Telegram」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon telegram-icon"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"/></svg></a>
+                    </div>
+                
+            
+                
+                    <div class="share-item qq">
+                        
+                        <a href="https://connect.qq.com/widget/shareqq/index.html?url=https://ZhcnPanda.github.io/posts/20240224/&amp;title=%e6%90%ad%e5%bb%baHugo%e4%b8%aa%e4%ba%ba%e5%8d%9a%e5%ae%a2%ef%bc%8c%e5%b9%b6%e4%b8%94%e4%bd%bf%e7%94%a8%e2%80%9cGithub%20Page%e2%80%9d%e6%89%98%e7%ae%a1%e9%9d%99%e6%80%81%e7%bd%91%e9%a1%b5&amp;summary=%c2%b7%20%e5%89%8d%e8%a8%80%20%e7%aa%81%e7%84%b6%e6%9c%89%e4%b8%80%e5%a4%a9%e6%99%9a%e4%b8%8a%e7%aa%81%e5%8f%91%e5%a5%87%e6%83%b3%ef%bc%8c%e6%83%b3%e5%81%9a%e4%b8%80%e4%b8%aa%e5%8d%9a%e5%ae%a2%ef%bc%8c%e8%ae%b0%e5%bd%95%e4%b8%80%e4%b8%8b%e8%b8%a9%e5%9d%91%e6%97%a5%e5%b8%b8%ef%bc%8c%e8%99%bd%e7%84%b6%e4%b9%8b%e5%89%8d%e4%b9%9f%e5%bc%84%e8%bf%87%ef%bc%8c%e4%b8%8d%e8%bf%87%e5%9f%ba%e2%80%a6%e2%80%a6&amp;pics=https://ZhcnPanda.github.io/icons/apple-touch-icon.png&amp;site=ZhcnPanda%20%e7%9a%84%e7%ac%94%e8%ae%b0%e8%96%84" title="分享到「QQ」" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon qq-icon"><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"/></svg></a>
+                    </div>
+                
+            
+        </div>
+
+    </div>
+
+
+
+
+        
+    
+    
+
+
+
+        
+    
+
+
+
+        
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+            
+                <li class="post-nav-next">
+                    <a href="/posts/hello-world/" rel="next">Hello World &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;2024–2024&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;ZhcnPanda</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"></div>
+
+            
+    
+        <ul class="socials"><li class="socials-item">
+                    <a href="mailto:2623493447@qq.com" target="_blank" rel="external noopener" title="Email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon social-icon"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg></a>
+                </li><li class="socials-item">
+                    <a href="https://github.com/ZhcnPanda" target="_blank" rel="external noopener" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon social-icon"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                </li><li class="socials-item">
+                    <a href="https://t.me/zhcnpanda" target="_blank" rel="external noopener" title="Telegram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon social-icon"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"/></svg></a>
+                </li></ul>
+    
+
+
+
+            
+        </div>
+    </footer>
+
+
+        </div>
+        
+
+        
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
+<script>
+    if (typeof renderMathInElement === 'undefined') {
+        const getScript = (options) => {
+            const script = document.createElement('script');
+            script.defer = true;
+            script.crossOrigin = 'anonymous';
+            Object.keys(options).forEach((key) => {
+                script[key] = options[key];
+            });
+            document.body.appendChild(script);
+        };
+        getScript({
+            src: 'https:\/\/cdn.jsdelivr.net\/npm\/katex@0.13.0\/dist\/katex.min.js',
+            onload: () => {
+                getScript({
+                    src: 'https:\/\/cdn.jsdelivr.net\/npm\/katex@0.13.0\/dist\/contrib\/mhchem.min.js',
+                    onload: () => {
+                        getScript({
+                            src: 'https:\/\/cdn.jsdelivr.net\/npm\/katex@0.13.0\/dist\/contrib\/auto-render.min.js',
+                            onload: () => {
+                                renderKaTex();
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    } else {
+        renderKaTex();
+    }
+    function renderKaTex() {
+        renderMathInElement(
+            document.body,
+            {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false}
+                ]
+            }
+        );
+    }
+</script>
+
+
+
+
+    <script>
+    if (typeof MathJax === 'undefined') {
+        window.MathJax = {
+            loader: {
+                load: ['[tex]/mhchem']
+            },
+            
+            tex: {
+                inlineMath: {'[+]': [['$', '$']]},
+                tags: 'ams',
+                packages: {'[+]': ['mhchem']}
+            }
+        };
+        (function() {
+            const script = document.createElement('script');
+            script.src = 'https:\/\/cdn.jsdelivr.net\/npm\/mathjax@3.1.2\/es5\/tex-mml-chtml.js';
+            script.defer = true;
+            document.head.appendChild(script);
+        })();
+    } else {
+        MathJax.texReset();
+        MathJax.typeset();
+    }
+</script>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    let imgNodes = document.querySelectorAll('div.post-body img');
+    imgNodes = Array.from(imgNodes).filter(node => node.parentNode.tagName !== "A");
+
+    mediumZoom(imgNodes, {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@5.1.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+
+
+    </body>
+</html>
