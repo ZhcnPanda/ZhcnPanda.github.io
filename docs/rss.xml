@@ -8,7 +8,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>ZhcnPanda 的笔记薄</title>
-        <link>https://ZhcnPanda.github.io/</link>
+        <link>https://reik.top/</link>
         <description>ZhcnPanda的记事本子</description>
         <generator>Hugo 0.123.3 https://gohugo.io/</generator>
         
@@ -21,15 +21,15 @@
             <webMaster>2623493447@qq.com (ZhcnPanda)</webMaster>
         
         
-        <lastBuildDate>Sun, 25 Feb 2024 21:26:24 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sun, 25 Feb 2024 21:29:30 &#43;0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="https://ZhcnPanda.github.io/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="https://reik.top/rss.xml" />
         
         
             <item>
                 <title>搭建Hugo个人博客，并且使用“Github Page”托管静态网页</title>
-                <link>https://ZhcnPanda.github.io/posts/20240224/</link>
-                <guid isPermaLink="true">https://ZhcnPanda.github.io/posts/20240224/</guid>
+                <link>https://reik.top/posts/20240224/</link>
+                <guid isPermaLink="true">https://reik.top/posts/20240224/</guid>
                 <pubDate>Sat, 24 Feb 2024 17:55:46 &#43;0800</pubDate>
                 
                     <author>2623493447@qq.com (ZhcnPanda)</author>
@@ -148,8 +148,8 @@
         
             <item>
                 <title>Hello World</title>
-                <link>https://ZhcnPanda.github.io/posts/hello-world/</link>
-                <guid isPermaLink="true">https://ZhcnPanda.github.io/posts/hello-world/</guid>
+                <link>https://reik.top/posts/hello-world/</link>
+                <guid isPermaLink="true">https://reik.top/posts/hello-world/</guid>
                 <pubDate>Fri, 23 Feb 2024 19:49:52 &#43;0800</pubDate>
                 
                     <author>2623493447@qq.com (ZhcnPanda)</author>
